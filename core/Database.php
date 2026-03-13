@@ -19,8 +19,7 @@
         {
             if ($this->conn === null) {
                 $this->conn = new PDO(
-                    "mysql:host={$this->host};dbname={$this-
-                    >dbname};charset=utf8",
+                    "mysql:host={$this->host};dbname={$this->dbname};charset=utf8",
                     $this->user,
                     $this->pass
                     );
