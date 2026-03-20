@@ -10,23 +10,26 @@
         
         public function all()
         {
-        // retornar todos os produtos
+            // retornar todos os produtos
+            
+            // Model acessa o BD, faz um SELECT e retorna para o controller
         }
+        
         public function find($id)
         {
-        // buscar produto pelo id
+            // buscar produto pelo id
         }
 
         public function create($dados)
         {
-        // inserir produto
+            // inserir produto
         }
         public function update($id, $dados)
         {
-        // atualizar produto
+            // atualizar produto
         }
         public function delete($id)
         {
-        // excluir produto
+            // excluir produto
         }
     }

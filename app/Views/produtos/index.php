@@ -18,14 +18,14 @@
     </tr>
     <?php foreach ($produtos as $p): ?>
     <tr>
-    <td><?= $p['id'] ?></td>
-    <td><?= $p['nome'] ?></td>
-    <td><?= $p['preco'] ?></td>
-    <td><?= $p['quantidade'] ?></td>
-    <td>
-    <a href="?action=edit&id=<?= $p['id'] ?>">Editar</a>
-    <a href="?action=delete&id=<?= $p['id'] ?>">Excluir</a>
-    </td>
+        <td><?= $p['id'] ?></td>
+        <td><?= $p['nome'] ?></td>
+        <td><?= $p['preco'] ?></td>
+        <td><?= $p['quantidade'] ?></td>
+        <td>
+        <a href="?action=edit&id=<?= $p['id'] ?>">Editar</a>
+        <a href="?action=delete&id=<?= $p['id'] ?>">Excluir</a>
+        </td>
     </tr>
     <?php endforeach; ?>
     </table>

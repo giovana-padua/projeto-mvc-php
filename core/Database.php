@@ -19,12 +19,12 @@
         {
             if ($this->conn === null) {
                 $this->conn = new PDO(
-                    "mysql:host={$this->host};dbname={$this->dbname};charset=utf8",
+                    "mysql:host={$this->host};dbname={$this->dbname};charset=utf8", 
                     $this->user,
                     $this->pass
                     );
-                    $this->conn->setAttribute(PDO::ATTR_ERRMODE,
-                    PDO::ERRMODE_EXCEPTION);
+
+                    $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             }
             return $this->conn;
         }

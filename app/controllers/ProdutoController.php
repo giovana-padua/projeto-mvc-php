@@ -6,18 +6,22 @@
         private $produtoModel;
         public function __construct()
         {
-        $database = new Database();
-        $db = $database->connect();
-        $this->produtoModel = new Produto($db);
+            $database = new Database();
+            $db = $database->connect();
+            $this->produtoModel = new Produto($db);
         }
+
         public function index()
         {
-        // listar produtos
+            return $this->produtoModel->all();
+            // Chama a view com os dados recebidos do model
         }
+
         public function create()
         {
         // mostrar formulário
         }
+
         public function store()
         {
         // salvar produto
