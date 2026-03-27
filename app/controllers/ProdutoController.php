@@ -22,38 +22,54 @@
         public function create()
         {
             // mostrar formulário
-            //1° pedir informações para o Model
-
             require __DIR__ . '/../Views/produtos/create.php';
-            
         }
 
         public function store()
         {
             // salvar produto
-            if ($_SERVER('REQUEST_METHOD') == 'POST')
-            {
-                $nomeProd = $_POST('nome'); 
-                $descricaoProd = $_POST('descricao'); 
-                $precoProd = $_POST('preco'); 
-                $quantidadeProd = $_POST('quantidade'); 
+            $dados = [
+                'nome'       => $_POST['nome']       ?? '',
+                'descricao'  => $_POST['descricao']  ?? '',
+                'preco'      => $_POST['preco']      ?? 0,
+                'quantidade' => $_POST['quantidade'] ?? 0,
+            ];
 
-                $dados = [$nomeProd, $descricaoProd, $precoProd, $quantidadeProd];
-
-                $this->produtoModel($dados);
-            }
+            $this->produtoModel->create($dados);
+            header('Location: index.php?action=index');
+            exit;
         }
 
         public function edit()
         {
-        // editar produto
+            // editar produto
+            $id = $_GET['id'] ?? null;
+            $produto = $this->produtoModel->find($id);
+            require __DIR__ . '/../views/produtos/edit.php';
         }
+
         public function update()
         {
-        // atualizar produto
+            // atualizar produto
+            $id = $_POST['id'] ?? null;
+            $dados = [
+                'nome'       => $_POST['nome']       ?? '',
+                'descricao'  => $_POST['descricao']  ?? '',
+                'preco'      => $_POST['preco']      ?? 0,
+                'quantidade' => $_POST['quantidade'] ?? 0,
+            ];
+    
+            $this->produtoModel->update($id, $dados);
+            header('Location: index.php?action=index');
+            exit;
         }
+        
         public function delete()
         {
-        // excluir produto
+            // excluir produto
+            $id = $_GET['id'] ?? null;
+            $this->produtoModel->delete($id);
+            header('Location: index.php?action=index');
+            exit;
         }
     }

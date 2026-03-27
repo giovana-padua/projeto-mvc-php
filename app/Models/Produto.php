@@ -19,20 +19,50 @@
         public function find($id)
         {
             // buscar produto pelo id
+            $stmt = $this->conn->prepare("SELECT * FROM {$this->table} WHERE id = :id");
+            $stmt->execute([':id' => $id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
         public function create($dados)
         {
             // inserir produto
-            $stmt = $this->conn->query("INSERT INTO produtos (nome, preco, quantidade) VALUES ($dados[0], $dados[1], $dados[2], $dados[3]);");
+            $stmt = $this->conn->prepare(
+            "INSERT INTO {$this->table} (nome, descricao, preco, quantidade)
+            VALUES (:nome, :descricao, :preco, :quantidade)"
+            );
 
+            return $stmt->execute([
+                ':nome'=> $dados['nome'],
+                ':descricao'=> $dados['descricao'],
+                ':preco'=> $dados['preco'],
+                ':quantidade'=> $dados['quantidade']
+            ]);
         }
         public function update($id, $dados)
         {
             // atualizar produto
+            $stmt = $this->conn->prepare(
+            "UPDATE {$this->table}
+            SET nome = :nome, descricao = :descricao, preco = :preco, quantidade = :quantidade
+            WHERE id = :id"
+            );
+
+            return $stmt->execute([
+                ':id' => $id,
+                ':nome'=> $dados['nome'],
+                ':descricao'=> $dados['descricao'],
+                ':preco'=> $dados['preco'],
+                ':quantidade'=> $dados['quantidade']
+            ]);
         }
         public function delete($id)
         {
             // excluir produto
+            $stmt = $this->conn->prepare(
+            "DELETE FROM {$this->table} WHERE id = :id"
+            );
+
+            return $stmt->execute([':id'=> $id]);
         }
     }
