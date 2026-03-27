@@ -13,6 +13,7 @@
             <a href="index.php" role="button" class="btn voltar">Voltar</a>
             <h1 class="title">Novo Produto</h1>
         </section>
+        
         <form method="POST" action="?action=store">
 
             <div class="campos">

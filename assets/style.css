@@ -58,13 +58,26 @@
     background: #9dcbdd;
 }
 
-table {
+
+/* Tabela */
+.v_produtos {
     width: 100%;
     border-collapse: collapse;
     padding: 10px;
 }
 
+
+
+.v_produtos tr {
+    height: 30px;
+}
+
+/* Tabela Fim */
+
+
+/* Form */
 .campo {
     display: flex;
     flex-direction: column;
 }
+/* Form Fim */
