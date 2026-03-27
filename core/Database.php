@@ -24,7 +24,7 @@
             if ($this->conn === null) {
                 try {
                     // fazer conexao aqui
-                    $this->conn = new PDO('mysql:host={$this->host};dbname={$this->dbname}',
+                    $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}",
                     $this->user, 
                     $this->pass);
                     // ao invés de usar valor absoluto é melhor usar os atributos

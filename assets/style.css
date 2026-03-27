@@ -60,6 +60,13 @@
 
 
 /* Tabela */
+.tabela {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    background-color: #9dcbdd;
+}
+
 .v_produtos {
     width: 100%;
     border-collapse: collapse;
@@ -69,6 +76,10 @@
 
 .v_produtos tr {
     height: 30px;
+}
+
+.v_produtos tbody tr:nth-child(odd) {
+    background-color: #ccc;
 }
 
 /* Tabela Fim */

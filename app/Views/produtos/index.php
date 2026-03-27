@@ -14,8 +14,8 @@
             <a href="?action=create" role="button" class="btn novo">Novo Produto</a>
         </section>
 
-        <section >
-            <table border="1" class="v_produtos">
+        <section class="tabela">
+            <table class="v_produtos">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -33,8 +33,9 @@
                             <td>R$ <?= $p['preco'] ?></td>
                             <td><?= $p['quantidade'] ?></td>
                             <td>
-                            <a class="btn acao" href="?action=edit&id=<?= $p['id'] ?>">Editar</a>
-                            <a class="btn acao" href="?action=delete&id=<?= $p['id'] ?>">Excluir</a>
+                                <a class="btn acao" role="button" href="?action=edit&id=<?= $p['id'] ?>">Editar</a>
+                                <!-- Passando pela URL -> GET -->
+                                <a class="btn acao" role="button" href="?action=delete&id=<?= $p['id'] ?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

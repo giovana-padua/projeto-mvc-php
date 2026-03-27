@@ -21,7 +21,7 @@
         {
             // retornar todos os produtos (Model acessa o BD, faz um SELECT e retorna para o controller)
             // buscar produto pelo id
-            $comandoSQL = 'SELECT * FROM {$this->table} ORDER BY id';
+            $comandoSQL = "SELECT * FROM {$this->table} ORDER BY id";
             $acesso = $this->conn->prepare($comandoSQL);
             $acesso->execute(); // execute: faz o comando sql e os dados ficam em $acesso
 
@@ -38,7 +38,7 @@
         
         public function find($id)
         {
-            $comandoSQL = 'SELECT * FROM {$this->table} WHERE id = :id'; // :id indica parametro, poderia ser direto {$id} 
+            $comandoSQL = "SELECT * FROM {$this->table} WHERE id = :id"; // :id indica parametro, poderia ser direto {$id} 
                 // mas isso gera uma falha de segurança (sql inject, se a pessoa digita ; Delete... deleta seu banco de dados)
             
             $acesso = $this->conn->prepare($comandoSQL);
@@ -81,7 +81,7 @@
 
         public function create($nome, $descr, $preco, $qtd) // pode receber cada parametro separado ou um array
         {
-            $comandoSQL = 'INSERT INTO {$this->table} (nome, descricao, preco, quantidade) VALUES (:nm, :dsc, :prc, :qtde)';
+            $comandoSQL = "INSERT INTO {$this->table} (nome, descricao, preco, quantidade) VALUES (:nm, :dsc, :prc, :qtde)";
             $acesso = $this->conn->prepare($comandoSQL);
 
             /* Pode ser feito assim: 
@@ -123,12 +123,12 @@
 
         public function update($id, $nome, $descr, $preco, $qtd)
         {
-            $comandoSQL = 'UPDATE {$this->table}
+            $comandoSQL = "UPDATE {$this->table}
                             SET nome = :nome,
                             descricao = :descr,
                             preco = :preco,
                             quantidade = :qtd
-                            WHERE id = :id';
+                            WHERE id = :id";
             
             $acesso = $this->conn->prepare($comandoSQL);
             return $acesso->execute([ //só por curiosidade pode ter o return
@@ -157,7 +157,7 @@
 
         public function delete ($id)
         {
-            $comandoSQL = 'DELETE FROM {$this->table} WHERE id = :id';
+            $comandoSQL = "DELETE FROM {$this->table} WHERE id = :id";
             $acesso = $this->conn->prepare($comandoSQL);
 
             // retorna a quantidade de registros deletados
