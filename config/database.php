@@ -22,8 +22,15 @@
     */
 
     return [
-        'host' => 'localhost',
+        'host' => 'localhost', // para internet: contratar serviço de hospedagem online, banco de dados online e colocar url
         'dbname' => 'aula_mvc',
         'user' => 'root',
         'pass' => ''
     ];
+
+    /* 
+    ao invés dos índices numéricos nomear eles 
+    array ['localhost', 'aula_mvc', 'root', '']
+    array ['localhost', 'aula_mvc', 'root', '']
+    
+    */

@@ -13,31 +13,34 @@
             <h1 class="title">Lista de Produtos</h1>
             <a href="?action=create" role="button" class="btn novo">Novo Produto</a>
         </section>
-        <table border="1" class="v_produtos">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($produtos as $p): ?>
+
+        <section >
+            <table border="1" class="v_produtos">
+                <thead>
                     <tr>
-                        <td><?= $p['id'] ?></td>
-                        <td><?= $p['nome'] ?></td>
-                        <td><?= $p['preco'] ?></td>
-                        <td><?= $p['quantidade'] ?></td>
-                        <td>
-                        <a href="?action=edit&id=<?= $p['id'] ?>">Editar</a>
-                        <a href="?action=delete&id=<?= $p['id'] ?>">Excluir</a>
-                        </td>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($produtos as $p): ?>
+                        <tr>
+                            <td><?= $p['id'] ?></td>
+                            <td><?= $p['nome'] ?></td>
+                            <td>R$ <?= $p['preco'] ?></td>
+                            <td><?= $p['quantidade'] ?></td>
+                            <td>
+                            <a class="btn acao" href="?action=edit&id=<?= $p['id'] ?>">Editar</a>
+                            <a class="btn acao" href="?action=delete&id=<?= $p['id'] ?>">Excluir</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
     </section>
 </body>
 </html>

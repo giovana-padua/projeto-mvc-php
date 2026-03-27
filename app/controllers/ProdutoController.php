@@ -16,13 +16,13 @@
         {
             $produtos = $this->produtoModel->all();
             // Chama a view com os dados recebidos do model
-            require __DIR__ . '/../Views/produtos/index.php';
+            require __DIR__ . '/../views/produtos/index.php';
         }
 
         public function create()
         {
             // mostrar formulário
-            require __DIR__ . '/../Views/produtos/create.php';
+            require __DIR__ . '/../views/produtos/create.php';
         }
 
         public function store()

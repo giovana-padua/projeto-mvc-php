@@ -24,14 +24,9 @@
     width: 100%;
 }
 
-.top-edit {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.top.edit {
     justify-content: flex-start;
     gap: 15px;
-
-    width: 100%;
 }
 
 .title {
@@ -53,6 +48,11 @@
     background: #ccc;
 }
 
+.btn.acao {
+    width: 60px;
+    background: #ccc;
+}
+
 .btn.novo {
     width: 90px;
     background: #9dcbdd;
@@ -64,9 +64,8 @@
     width: 100%;
     border-collapse: collapse;
     padding: 10px;
+    text-align: center;
 }
-
-
 
 .v_produtos tr {
     height: 30px;

@@ -9,8 +9,8 @@
 </head>
 <body>
     <section class="container">
-        <section class="top-edit">
-            <a href="index.php" role="button" class="btn voltar">Voltar</a>
+        <section class="top edit">
+            <a href="?action=index" role="button" class="btn voltar">Voltar</a>
             <h1 class="title">Novo Produto</h1>
         </section>
         
